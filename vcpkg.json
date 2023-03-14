@@ -1,5 +1,5 @@
 {
-  "name": "imgui-template",
+  "name": "baseengine",
   "version": "1.0",
   "dependencies": [
     {

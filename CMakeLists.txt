@@ -1,9 +1,17 @@
 cmake_minimum_required(VERSION 3.24)
-project(imgui-template)
+project(BaseEngine)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(${PROJECT_NAME} src/main.cpp "src/ImGuiFrame.cpp" "include/ImGuiFrame.h"  "include/CustomImGuiFrame.h" "src/CustomImGuiFrame.cpp")
+add_executable(${PROJECT_NAME}
+	"src/Launcher.cpp"
+	"src/engine/EngineManager.cpp"
+	"src/engine/WindowManager.cpp"
+	"src/engine/GLErrorManager.cpp"
+	"src/engine/RenderManager.cpp"
+	"src/engine/render/Shader.cpp"
+	"src/engine/render/VertexBuffer.cpp"
+	"src/engine/render/IndexBuffer.cpp")
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 
 find_package(glad CONFIG REQUIRED)
