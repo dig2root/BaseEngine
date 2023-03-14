@@ -8,12 +8,13 @@ VertexBuffer::VertexBuffer(const void* data, unsigned int size)
 	GLCall(glGenBuffers(1, &m_vboID));
 	GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vboID));
 	GLCall(glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW));
-	std::cout << "VertexBuffer created" << std::endl;
+	std::cout << "VertexBuffer created : " << m_vboID << std::endl;
 }
 
 VertexBuffer::~VertexBuffer()
 {
-	GLCall(glDeleteBuffers(1, &m_vboID));
+	cleanUp();
+	std::cout << "VertexBuffer destroyed : " << m_vboID << std::endl;
 }
 
 void VertexBuffer::bind() const

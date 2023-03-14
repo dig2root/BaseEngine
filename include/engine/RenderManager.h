@@ -13,8 +13,8 @@ public:
 	void cleanUp();
 
 private:
-	Shader m_shader;
-	VertexBuffer m_vertexBuffer;
-	IndexBuffer m_indexBuffer;
+	Shader* m_shaderPtr;
+	VertexBuffer* m_vertexBufferPtr;
+	IndexBuffer* m_indexBufferPtr;
 	GLuint m_VAO;
 };

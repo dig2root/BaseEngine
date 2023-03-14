@@ -5,6 +5,11 @@
 #include <fstream>
 #include <sstream>
 
+Shader::Shader(const std::string& filepath)
+{
+	parseShader(filepath);
+	createShader();
+}
 
 void Shader::createShader()
 {

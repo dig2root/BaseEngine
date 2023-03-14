@@ -7,8 +7,8 @@ class Shader
 {
 public:
 	Shader() = default;
-	void parseShader(const std::string& filename);
-	void createShader();
+	Shader(const std::string& filename);
+	
 	void bind();
 	void unbind();
 	void cleanUp();
@@ -24,6 +24,8 @@ private:
 	std::string m_vertexShaderSource;
 	std::string m_fragmentShaderSource;
 
+	void parseShader(const std::string& filename);
+	void createShader();
 	GLuint compileShader(GLuint type, const std::string& source);
 	void link();
 };
